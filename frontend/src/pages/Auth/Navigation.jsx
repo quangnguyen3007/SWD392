@@ -50,7 +50,7 @@ const Navigation = () => {
       id="navigation-container"
     >
       <div>
-        <img style={{ borderRadius: "50%" }} src="../logo.jpg" alt="logo" />
+        <img style={{ borderRadius: "50%" }} src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/450447238_867032958818198_7257286043298032101_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=i1b9cXKcMjoQ7kNvgFMnnaa&_nc_ht=scontent.fsgn2-7.fna&oh=00_AYDPH5queUxg45Z0OTermZ_SKwo7P_sw7IPadTInzQNTTQ&oe=669B1354" alt="logo" />
       </div>      
       <div className="flex flex-col justify-center space-y-4">
         <Link
