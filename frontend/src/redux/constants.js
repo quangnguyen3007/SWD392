@@ -1,4 +1,4 @@
-export const BASE_URL = "/api/";
+export const BASE_URL = API;
 
 // export const USERS_URL = `/api/users`;
 // export const CATEGORY_URL = `/api/category`;
