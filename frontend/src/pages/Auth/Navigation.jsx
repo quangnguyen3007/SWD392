@@ -46,17 +46,19 @@ const Navigation = () => {
       style={{ zIndex: 9999 }}
       className={`${
         showSidebar ? "hidden" : "flex"
-      } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%] h-[100vh]  fixed `}
+      } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#00C7B1] w-[4%] hover:w-[15%] h-[100vh] fixed `}
       id="navigation-container"
     >
-      <div><img style={{borderRadius: "50%"}} src="../logo.jpg"/></div>
+      <div>
+        <img style={{ borderRadius: "50%" }} src="../logo.jpg" alt="logo" />
+      </div>      
       <div className="flex flex-col justify-center space-y-4">
         <Link
           to="/"
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
           <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+          <span className="hidden nav-item-name mt-[3rem]">HOME</span>
         </Link>
 
         <Link
@@ -64,21 +66,19 @@ const Navigation = () => {
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
           <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
+          <span className="hidden nav-item-name mt-[3rem]">SHOP</span>
         </Link>
 
         <Link to="/cart" className="flex relative">
           <div className="flex items-center transition-transform transform hover:translate-x-2">
             <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
-            <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
+            <span className="hidden nav-item-name mt-[3rem]">Cart</span>
           </div>
 
           <div className="absolute top-9">
             {cartItems.length > 0 && (
-              <span>
-                <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
-                  {cartItems.reduce((a, c) => a + c.qty, 0)}
-                </span>
+              <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                {cartItems.reduce((a, c) => a + c.qty, 0)}
               </span>
             )}
           </div>
@@ -87,9 +87,7 @@ const Navigation = () => {
         <Link to="/favorite" className="flex relative">
           <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
             <FaHeart className="mt-[3rem] mr-2" size={20} />
-            <span className="hidden nav-item-name mt-[3rem]">
-              Favorites
-            </span>{" "}
+            <span className="hidden nav-item-name mt-[3rem]">Favorites</span>
             <FavoritesCount />
           </div>
         </Link>
@@ -129,7 +127,7 @@ const Navigation = () => {
           <ul
             className={`absolute right-0 mt-2 mr-14 space-y-2 bg-white text-gray-600 ${
               !userInfo.isAdmin ? "-top-20" : "-top-80"
-            } `}
+            }`}
           >
             {userInfo.isAdmin && (
               <>

@@ -67,7 +67,7 @@ const ProductList = () => {
   };
 
   return (
-    <div className="container xl:mx-[9rem] sm:mx-[0]">
+    <div className="container mx-auto flex justify-center items-center">
       <div className="flex flex-col md:flex-row">
         <AdminMenu />
         <div className="md:w-3/4 p-3">
@@ -98,73 +98,72 @@ const ProductList = () => {
           </div> */}
 
           <div className="p-3">
-            <div className="flex flex-wrap">
-              <div className="one">
+            <div className="flex flex-wrap gap-4 justify-center">
+              <div className="w-full md:w-1/2">
                 <label htmlFor="name">Name</label> <br />
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3 w-full md:w-[35rem] border rounded-lg bg-white text-black"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div className="two ml-10 ">
-                <label htmlFor="name block">Price</label> <br />
+              <div className="w-full md:w-1/2">
+                <label htmlFor="price">Price</label> <br />
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3 w-full md:w-[35rem] border rounded-lg bg-white text-black"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
             </div>
-            <div className="flex flex-wrap">
-              <div className="one">
-                <label htmlFor="name block">Quantity</label> <br />
+            <div className="flex flex-wrap gap-4 justify-center">
+              <div className="w-full md:w-1/2">
+                <label htmlFor="quantity">Quantity</label> <br />
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3 w-full md:w-[35rem] border rounded-lg bg-white text-black"
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
-              <div className="two ml-10 ">
-                <label htmlFor="name block">Brand</label> <br />
+              <div className="w-full md:w-1/2">
+                <label htmlFor="brand">Brand</label> <br />
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3 w-full md:w-[35rem] border rounded-lg bg-white text-black"
                   value={brand}
                   onChange={(e) => setBrand(e.target.value)}
                 />
               </div>
             </div>
 
-            <label htmlFor="" className="my-5">
-              Description
-            </label>
-            <textarea
-              type="text"
-              className="p-2 mb-3 bg-[#101011] border rounded-lg w-[95%] text-white"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
-
-            <div className="flex justify-between">
-              <div>
-                <label htmlFor="name block">Count In Stock</label> <br />
+            <div className="flex flex-wrap gap-4 justify-center">
+              <div className="w-full md:w-1/2">
+                <label htmlFor="description">Description</label> <br />
+                <textarea
+                  type="text"
+                  className="p-4 mb-3 w-full md:w-[35rem] border rounded-lg bg-white text-black"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                ></textarea>
+              </div>
+              <div className="w-full md:w-1/2">
+                <label htmlFor="stock">Count In Stock</label> <br />
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3 w-full md:w-[35rem] border rounded-lg bg-white text-black"
                   value={stock}
                   onChange={(e) => setStock(e.target.value)}
                 />
               </div>
 
-              <div>
-                <label htmlFor="">Category</label> <br />
+              <div className="w-full md:w-1/2">
+                <label htmlFor="category">Category</label> <br />
                 <select
                   placeholder="Choose Category"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3 w-full md:w-[35rem] border rounded-lg bg-white text-black"
                   onChange={(e) => setCategory(e.target.value)}
                 >
                   {categories?.map((c) => (

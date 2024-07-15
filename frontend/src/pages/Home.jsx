@@ -4,9 +4,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
-import {
-  AiOutlineShopping,
-} from "react-icons/ai";
+import { AiOutlineShopping } from "react-icons/ai";
 
 const Home = () => {
   const { keyword } = useParams();
@@ -31,19 +29,17 @@ const Home = () => {
             <Link
               to="/shop"
               className="bg-pink-600 font-bold rounded-full py-2 px-10 mr-[18rem] mt-[10rem]"
-            ><AiOutlineShopping  size={26} />
-              
+            >
+              <AiOutlineShopping size={26} />
             </Link>
           </div>
 
-          <div>
-            <div className="flex justify-center flex-wrap mt-[2rem]">
-              {data.products.map((product) => (
-                <div key={product._id}>
-                  <Product product={product} />
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center mt-[2rem] mx-[2rem]">
+            {data.products.map((product) => (
+              <div key={product._id} className="flex justify-center">
+                <Product product={product} />
+              </div>
+            ))}
           </div>
         </>
       )}

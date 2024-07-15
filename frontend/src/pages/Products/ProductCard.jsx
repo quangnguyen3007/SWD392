@@ -17,25 +17,25 @@ const ProductCard = ({ p }) => {
   };
 
   return (
-    <div className="max-w-sm relative bg-[#1A1A1A] rounded-lg shaodw dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-[22rem] mx-2 my-4 relative bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <section className="relative">
         <Link to={`/product/${p._id}`}>
           <span className="absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
             {p?.brand}
           </span>
           <img
-            className="cursor-pointer w-full"
+            className="cursor-pointer w-full h-full object-contain rounded-t-lg"
             src={p.image}
             alt={p.name}
-            style={{ height: "170px", objectFit: "cover" }}
+            style={{ height: '200px' }} // Đặt chiều cao của hình ảnh
           />
         </Link>
         <HeartIcon product={p} />
       </section>
 
       <div className="p-5">
-        <div className="flex justify-between">
-          <h5 className="mb-2 text-xl text-whiet dark:text-white">{p?.name}</h5>
+        <div className="flex justify-between items-start">
+          <h5 className="mb-2 text-xl text-lg dark:text-white">{p?.name}</h5>
 
           <p className="text-black font-semibold text-pink-500">
             {p?.price?.toLocaleString("en-US", {
@@ -45,7 +45,7 @@ const ProductCard = ({ p }) => {
           </p>
         </div>
 
-        <p className="mb-3 font-normal text-[#CFCFCF]">
+        <p className="mb-3 font-normal text-[#5B4A3B]">
           {p?.description?.substring(0, 60)} ...
         </p>
 
@@ -73,7 +73,7 @@ const ProductCard = ({ p }) => {
           </Link>
 
           <button
-            className="p-2 rounded-full"
+            className="p-2 rounded-full text-white bg-pink-700 hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-pink-800"
             onClick={() => addToCartHandler(p, 1)}
           >
             <AiOutlineShoppingCart size={25} />

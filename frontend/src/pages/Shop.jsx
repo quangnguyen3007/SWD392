@@ -82,27 +82,30 @@ const Shop = () => {
 
   return (
     <>
-      <div className="container mx-auto">
-        <div className="flex md:flex-row">
-          <div className="bg-[#151515] p-3 mt-2 mb-2">
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+      <div className="container mx-auto bg-[#C7F5FF]">
+        <div className="flex flex-wrap md:flex-nowrap">
+
+          {/* Filter by categories */}
+          <div className="bg-[#C7F5FF] p-3 mt-2 mb-2 w-full md:w-[20rem]">
+            <h2 className="h4 text-white text-center py-2 bg-[#BE186D] rounded-full mb-2">
               Filter by categories
             </h2>
-
-            <div className="p-5 w-[15rem]">
+            
+            {/* Category */}
+            <div className="p-5">
               {categories?.map((c) => (
                 <div key={c._id} className="mb-2">
-                  <div className="flex ietms-center mr-4">
+                  <div className="flex items-center mr-4">
                     <input
                       type="checkbox"
-                      id="red-checkbox"
+                      id={`category-${c._id}`}
                       onChange={(e) => handleCheck(e.target.checked, c._id)}
                       className="w-4 h-4 text-pink-600 bg-gray-100 border-gray-300 rounded focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     />
 
                     <label
-                      htmlFor="pink-checkbox"
-                      className="ml-2 text-sm font-medium text-white dark:text-gray-300"
+                      htmlFor={`category-${c._id}`}
+                      className="ml-2 text-sm font-medium text-[#BE186D] dark:text-gray-300"
                     >
                       {c.name}
                     </label>
@@ -111,38 +114,36 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+            <h2 className="h4 text-white text-center py-2 bg-[#BE186D] rounded-full mb-2">
               Filter by brands
             </h2>
 
             <div className="p-5">
               {uniqueBrands?.map((brand) => (
-                <>
-                  <div className="flex items-enter mr-4 mb-5">
-                    <input
-                      type="radio"
-                      id={brand}
-                      name="brand"
-                      onChange={() => handleBrandClick(brand)}
-                      className="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                    />
+                <div key={brand} className="flex items-center mr-4 mb-5">
+                  <input
+                    type="radio"
+                    id={brand}
+                    name="brand"
+                    onChange={() => handleBrandClick(brand)}
+                    className="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                  />
 
-                    <label
-                      htmlFor="pink-radio"
-                      className="ml-2 text-sm font-medium text-white dark:text-gray-300"
-                    >
-                      {brand}
-                    </label>
-                  </div>
-                </>
+                  <label
+                    htmlFor={brand}
+                    className="ml-2 text-sm font-medium text-[#BE186D] dark:text-gray-300"
+                  >
+                    {brand}
+                  </label>
+                </div>
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+            <h2 className="h4 text-white text-center py-2 bg-[#BE186D] rounded-full mb-2">
               Filter by price
             </h2>
 
-            <div className="p-5 w-[15rem]">
+            <div className="p-5">
               <input
                 type="text"
                 placeholder="Enter Price"
@@ -152,9 +153,9 @@ const Shop = () => {
               />
             </div>
 
-            <div className="p-5 pt-0">
+            <div className="p-5 pt-0  ">
               <button
-                className="w-full border my-4"
+                className="w-full border my-4 text-[#9D174D] bg-[#FCE7F3]"
                 onClick={() => window.location.reload()}
               >
                 Reset
@@ -162,17 +163,15 @@ const Shop = () => {
             </div>
           </div>
 
-          <div className="p-3">
+          <div className="p-3 flex-grow">
             <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
-            <div className="flex flex-wrap">
-              {products.length === 0 ? (
-                <Loader />
-              ) : (
-                products?.map((p) => (
-                  <div className="p-3" key={p._id}>
-                    <ProductCard p={p} />
-                  </div>
+            <div className="flex flex-wrap justify-center">
+              {products?.length ? (
+                products.map((p) => (
+                  <ProductCard key={p._id} p={p} />
                 ))
+              ) : (
+                <p>No products available.</p>
               )}
             </div>
           </div>

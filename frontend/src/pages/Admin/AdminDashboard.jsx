@@ -93,12 +93,11 @@ const AdminDashboard = () => {
   return (
     <>
       <AdminMenu />
-
-      <section className="xl:ml-[4rem] md:ml-[0rem]">
-        <div className="w-[80%] flex justify-around flex-wrap">
-          <div className="rounded-lg bg-black p-5 w-[20rem] mt-5">
+      <section className="xl:ml-[4rem] md:ml-[0rem] flex flex-col items-center">
+        <div className="w-full flex justify-center flex-wrap">
+          <div className="rounded-lg bg-white p-5 w-[20rem] m-5">
             <div className="font-bold rounded-full w-[3rem] bg-pink-500 text-center p-3">
-            💲
+              💲
             </div>
 
             <p className="mt-5">Sales</p>
@@ -106,24 +105,24 @@ const AdminDashboard = () => {
               $ {isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
             </h1>
           </div>
-          <div className="rounded-lg bg-black p-5 w-[20rem] mt-5">
+          <div className="rounded-lg bg-white p-5 w-[20rem] m-5">
             <div className="font-bold rounded-full w-[3rem] bg-pink-500 text-center p-3">
-            <FaUserCircle size={23} />
+              <FaUserCircle size={23} />
             </div>
 
             <p className="mt-5">Customers</p>
             <h1 className="text-xl font-bold">
-            {isLoading ? <Loader /> : customers?.length}
+              {isLoading ? <Loader /> : customers?.length}
             </h1>
           </div>
-          <div className="rounded-lg bg-black p-5 w-[20rem] mt-5">
+          <div className="rounded-lg bg-white p-5 w-[20rem] m-5">
             <div className="font-bold rounded-full w-[3rem] bg-pink-500 text-center p-3">
-            <FaTruck  size={25}/>
+              <FaTruck size={25} />
             </div>
 
             <p className="mt-5">All Orders</p>
             <h1 className="text-xl font-bold">
-               {isLoading ? <Loader /> : orders?.totalOrders}
+              {isLoading ? <Loader /> : orders?.totalOrders}
             </h1>
           </div>
         </div>
@@ -137,7 +136,7 @@ const AdminDashboard = () => {
           />
         </div> */}
 
-        <div className="mt-[4rem]">
+        <div className="mt-[4rem] w-full flex justify-center">
           <OrderList />
         </div>
       </section>
