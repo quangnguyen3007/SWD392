@@ -43,6 +43,16 @@ const Home = () => {
           </div>
         </>
       )}
+
+      <footer className="bg-gray-800 text-white py-4 mt-10">
+        <div className="container mx-auto text-center">
+          <p className="text-lg">Hotline: 1800-123-456</p>
+          <p className="text-sm mt-2">
+            &copy; 2024 Your Company. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
     </>
   );
 };
