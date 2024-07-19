@@ -22,12 +22,12 @@ const AllProducts = () => {
             <div className="ml-[2rem] text-xl font-bold h-12">
               All Products ({products.length})
             </div>
-            <div className="flex flex-wrap justify-around items-center">
+            <div className="flex flex-col">
               {products.map((product) => (
                 <Link
                   key={product._id}
                   to={`/admin/product/update/${product._id}`}
-                  className="block mb-4 overflow-hidden"
+                  className="block mb-4 overflow-hidden w-full"
                 >
                   <div className="flex">
                     <img
@@ -35,7 +35,7 @@ const AllProducts = () => {
                       alt={product.name}
                       className="w-[10rem] object-cover"
                     />
-                    <div className="p-4 flex flex-col justify-around">
+                    <div className="p-4 flex flex-col justify-around w-full">
                       <div className="flex justify-between">
                         <h5 className="text-xl font-semibold mb-2">
                           {product?.name}
@@ -46,7 +46,7 @@ const AllProducts = () => {
                         </p>
                       </div>
 
-                      <p className="text-gray-400 xl:w-[30rem] lg:w-[30rem] md:w-[20rem] sm:w-[10rem] text-sm mb-4">
+                      <p className="text-gray-400 text-sm mb-4">
                         {product?.description?.substring(0, 160)}...
                       </p>
 

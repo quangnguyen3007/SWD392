@@ -144,12 +144,7 @@ const Register = () => {
           </p>
         </div>
       </div>
-      <img
-          src="https://i.pinimg.com/736x/4e/5b/1e/4e5b1e974d475aaa999dec762ab3c913.jpg"
-          alt=""
-          className="h-[65rem] w-[59%] xl:block md:hidden sm:hidden rounded-lg"
-          style={{"width" : "30%", "height" : "30%"}}
-        />
+  
     </section>
   );
 };
